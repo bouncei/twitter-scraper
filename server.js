@@ -10,9 +10,9 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.get("/", async (req, res) => {
-  res.json({ message: "Welcome 😃" });
-});
+// app.get("/", async (req, res) => {
+//   res.json({ message: "Welcome 😃" });
+// });
 
 app.post("/api/mail", async (req, res) => {
   // SENDING SMtp
@@ -54,6 +54,7 @@ app.post("/api/mail", async (req, res) => {
 app.get("/api/posts", async (req, res) => {
   // Define a GET route for the /posts endpoint
   // Use the Post model to find all posts and return them as a JSON response with pagination
+
   const page = parseInt(req.query.page) || 1;
   const limit = parseInt(req.query.limit) || 10;
   const offset = (page - 1) * limit;
@@ -79,6 +80,7 @@ app.get("/api/posts", async (req, res) => {
 app.post("/api/save-data", async (req, res) => {
   const { text, image } = req.query;
 
+  console.log("Save data", req.query);
   try {
     const newPost = await Post.create({ text, image });
 

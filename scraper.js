@@ -23,7 +23,7 @@ const sendMail = async (to) => {
     };
 
     const response = await axios.post(
-      `https://twitter-scraper-n6ac.onrender.com//api/mail?to=${query.to}&subject=${query.subject}&text=${query.text}&msg=${query.msg}`,
+      `https://twitter-scraper-n6ac.onrender.com/api/mail?to=${query.to}&subject=${query.subject}&text=${query.text}&msg=${query.msg}`,
 
       {
         headers: {
@@ -41,7 +41,7 @@ const sendMail = async (to) => {
 async function saveToDatabase({ text, image }) {
   try {
     const response = await axios.post(
-      `https://twitter-scraper-n6ac.onrender.com//api/save-data?text=${text}&image=${image}`,
+      `https://twitter-scraper-n6ac.onrender.com/api/save-data?text=${text}&image=${image}`,
       {
         headers: {
           "Content-Type": "application/json",

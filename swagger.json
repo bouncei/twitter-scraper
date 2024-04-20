@@ -6,7 +6,7 @@
   },
   "servers": [
     {
-      "url": "https://twitter-scraper-n6ac.onrender.com/"
+      "url": "https://twitter-scraper-n6ac.onrender.com"
     }
   ],
   "paths": {
