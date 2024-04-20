@@ -6,7 +6,7 @@
   },
   "servers": [
     {
-      "url": "http://localhost:4000"
+      "url": "https://twitter-scraper-n6ac.onrender.com/"
     }
   ],
   "paths": {
