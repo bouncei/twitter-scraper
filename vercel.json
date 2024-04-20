@@ -2,11 +2,12 @@
   "version": 2,
   "builds": [
     {
-      "src": "scraper.js",
-      "use": "@vercel/node",
-      "config": {
-        "schedule": "*/10 * * * *"
-      }
+      "src": "/server.js",
+      "use": "@vercel/node"
+
     }
-  ]
+  ],
+  "routes" : [{
+    "src": "/(.*)", "dest": "/"
+  }]
 }
