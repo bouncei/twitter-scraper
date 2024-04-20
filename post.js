@@ -1,11 +1,7 @@
 const { Pool } = require("pg");
 
 const pool = new Pool({
-  user: "apple",
-  host: "localhost",
-  database: "twitter_db",
-  password: "resilience",
-  port: 5432,
+  connectionString: process.env.DATABASE_URL,
 });
 
 const Post = {
