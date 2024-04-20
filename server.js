@@ -10,9 +10,9 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// app.get("/", async (req, res) => {
-//   res.json({ message: "Welcome 😃" });
-// });
+app.get("/", async (req, res) => {
+  res.json({ message: "Welcome 😃" });
+});
 
 app.post("/api/mail", async (req, res) => {
   // SENDING SMtp

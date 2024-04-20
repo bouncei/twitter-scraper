@@ -134,7 +134,7 @@ async function scrapeCoinDeskTweets() {
   }
 }
 
-const CRON_JOB_INTERVAL = "*/1 * * * *";
+const CRON_JOB_INTERVAL = "*/30 * * * *";
 
 const runCronJob = async () => {
   try {
