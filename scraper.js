@@ -2,6 +2,8 @@ const puppeteer = require("puppeteer");
 const cron = require("node-cron");
 const axios = require("axios");
 
+require("dotenv").config();
+
 const randomIntFromInterval = (min, max) => {
   return Math.floor(Math.random() * (max - min) + min);
 };
@@ -101,7 +103,7 @@ async function scrapeCoinDeskTweets() {
       );
 
       if (videoBlock) {
-        await sendMail("joshuainyang255@gmail.com"); // send mail to user
+        await sendMail(process.env.TO_EMAIL); // send mail to user
         console.log("Video available");
       } else {
         const imageBlock = await tweetDivs[tweetIndex].$(
@@ -134,7 +136,7 @@ async function scrapeCoinDeskTweets() {
   }
 }
 
-const CRON_JOB_INTERVAL = "*/30 * * * *";
+const CRON_JOB_INTERVAL = "*/1 * * * *";
 
 const runCronJob = async () => {
   try {

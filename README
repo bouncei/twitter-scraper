@@ -1,0 +1,57 @@
+# Twitter Scraper
+
+This is a Twitter scraper built with Node.js that periodically checks the CoinDesk Twitter channel for new tweets containing videos or images. When a video is detected, an email notification is sent to the specified recipient. If an image is detected, it is saved to a PostgreSQL database via a REST API.
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- [Node.js](https://nodejs.org/) installed
+- A [PostgreSQL](https://www.postgresql.org/) database
+- An email server for sending notifications
+
+## Installation
+
+1. Clone this repository:
+
+   ```bash
+   git clone https://github.com/your_username/twitter-scraper.git
+   ```
+
+2. Navigate into the project directory:
+   ```bash
+   cd twiter-scraper
+   ```
+3. Install the dependecies:
+   ```bash
+   npm install
+   ```
+
+## Configuration
+
+1. Create a .env file in the root directory of the project:
+   ```bash
+   SENDGRID_API_KEY=your_send_grid_Api_key
+   PORT=your_prefered_port
+   DATABASE_URL=your_postgresql_connection_string
+   TO_EMAIL=email_addreess_to_recieve_updates
+   ```
+
+## Usage
+
+1. To start the Twitter scraper, run:
+   ```bash
+   node scraper.js
+   ```
+2. To start the node server, run:
+   ```bash
+   npm start
+   ```
+
+## Technologies
+
+- [Puppeteer](https://github.com/puppeteer/puppeteer) - Headless browser automation
+- [Node-cron](https://github.com/node-cron/node-cron) - Cron jobs in Node.js
+- [Axios](https://github.com/axios/axios) - HTTP client for making requests
+- [PostgreSQL](https://www.postgresql.org/) - Relational database
+- REST API - For saving images to the database
